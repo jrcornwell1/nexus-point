@@ -8,11 +8,13 @@ import AppVehicleFilters from './AppVehicleFilters.vue';
 import AppPageLoader from '@/components/AppPageLoader.vue';
 import AppPagination from '@/components/AppPagination.vue';
 import useVehicles from '@/composables/useVehicles.js';
+import { storeToRefs } from 'pinia';
 
 const vehicleStore = useVehicleStore();
+const { isLoading } = storeToRefs(vehicleStore);
 const { fetchVehicles } = vehicleStore;
 
-const { vehicles, activeFilter, isLoading, meta } = useVehicles();
+const { vehicles, activeFilter, meta } = useVehicles();
 
 fetchVehicles();
 
