@@ -2,10 +2,12 @@
 import useVehicleStore from '@/stores/vehicle.store.js';
 import { storeToRefs } from 'pinia';
 import { FILTERS } from '@/const/index.js';
+import useVehicles from '@/composables/useVehicles.js';
 
 const vehicleStore = useVehicleStore();
-const { totalCars, activeFilter } = storeToRefs(vehicleStore);
 const { fetchVehicles } = vehicleStore;
+
+const { totalCars, activeFilter } = useVehicles();
 
 const handleFilter = (filter) => {
   activeFilter.value = filter;

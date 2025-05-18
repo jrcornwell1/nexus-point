@@ -1,6 +1,5 @@
 <script setup>
 import useVehicleStore from '../stores/vehicle.store.js';
-import { storeToRefs } from 'pinia';
 import ViewAppVehicleSearchResultsItem from './ViewAppVehicleSearchResultsItem.vue';
 import ContainerGrid from './ContainerGrid.vue';
 import { onBeforeUnmount, ref } from 'vue';
@@ -8,10 +7,12 @@ import AppVehicleValueCard from './AppVehicleValueCard.vue';
 import AppVehicleFilters from './AppVehicleFilters.vue';
 import AppPageLoader from '@/components/AppPageLoader.vue';
 import AppPagination from '@/components/AppPagination.vue';
+import useVehicles from '@/composables/useVehicles.js';
 
 const vehicleStore = useVehicleStore();
-const { vehicles, isLoading, meta, activeFilter } = storeToRefs(vehicleStore);
 const { fetchVehicles } = vehicleStore;
+
+const { vehicles, activeFilter, isLoading, meta } = useVehicles();
 
 fetchVehicles();
 

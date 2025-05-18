@@ -1,13 +1,11 @@
 import { defineStore } from 'pinia';
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
 import { Vehicle } from '@/api/index.js';
-import { FILTERS } from '@/const/index.js';
 
 export default defineStore('vehicle', () => {
   const isLoading = ref(false);
   const vehicles = ref([]);
   const meta = ref({});
-  const activeFilter = ref(FILTERS.ALL);
 
   const fetchVehicles = async (params = null, page = 1) => {
     try {
@@ -23,20 +21,7 @@ export default defineStore('vehicle', () => {
     }
   };
 
-  const total = {
-    [FILTERS.ALL]: 'all_total',
-    [FILTERS.USED]: 'total_used_vehicles',
-    [FILTERS.NEW]: 'total_new_vehicles',
-    [FILTERS.OFFERS]: 'offer_vehicles',
-  };
-
-  const totalCars = computed(() => {
-    return meta.value[total[activeFilter.value]];
-  });
-
   return {
-    activeFilter,
-    totalCars,
     isLoading,
     vehicles,
     meta,
