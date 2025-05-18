@@ -8,7 +8,6 @@ import AppVehicleValueCard from './AppVehicleValueCard.vue';
 import AppVehicleFilters from './AppVehicleFilters.vue';
 import AppPageLoader from '@/components/AppPageLoader.vue';
 import AppPagination from '@/components/AppPagination.vue';
-import axios from 'axios';
 
 const vehicleStore = useVehicleStore();
 const { vehicles, isLoading, meta, activeFilter } = storeToRefs(vehicleStore);

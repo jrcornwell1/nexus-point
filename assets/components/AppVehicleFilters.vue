@@ -1,6 +1,5 @@
 <script setup>
 import useVehicleStore from '@/stores/vehicle.store.js';
-import { computed, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { FILTERS } from '@/const/index.js';
 
@@ -41,11 +40,6 @@ const handleFilter = (filter) => {
     >
       New
     </button>
-    <select class="select ms-auto">
-      <option disabled selected>Pick a color</option>
-      <option>Lowest price</option>
-      <option>Highest price</option>
-    </select>
   </div>
 </template>
 

@@ -12,7 +12,6 @@ const emit = defineEmits(['pageChanged']);
 
 const { meta } = toRefs(props);
 
-// Create a reactive reference for the current page
 const currentPageRef = ref(props.meta.current_page);
 
 const pagination = useOffsetPagination({
@@ -23,7 +22,6 @@ const pagination = useOffsetPagination({
 
 const { pageCount, isFirstPage, isLastPage } = pagination;
 
-// Custom navigation functions
 const goToNext = () => {
   if (!isLastPage.value) {
     currentPageRef.value++;
@@ -43,7 +41,6 @@ const goToPage = (page) => {
   emit('pageChanged', page);
 };
 
-// Watch for external meta changes
 watch(
   () => props.meta.current_page,
   (newPage) => {
