@@ -1,0 +1,19 @@
+.badge {
+    @apply !rounded-lg border-[1px] border-solid border-white/20;
+}
+
+.badge-lg {
+    @apply  text-lg font-semibold bg-grey-950 text-white h-7 leading-7;
+}
+
+.badge-sm {
+    @apply  text-sm font-normal bg-grey-950 text-white h-4 leading-4;
+}
+
+.btn-filter {
+    @apply rounded-lg h-7;
+}
+
+.btn-active {
+    @apply !bg-brand text-white rounded-lg h-7;
+}

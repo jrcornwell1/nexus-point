@@ -29,7 +29,7 @@ const router = createRouter({
                   path: '',
                   name: ROUTE.SEARCH_RESULTS,
                   components: {
-                    content: () => import('../components/HelloWorld.vue'),
+                    content: () => import('../components/ViewAppVehicleSearchResults.vue'),
                   },
                 },
               ],

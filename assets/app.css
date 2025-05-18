@@ -2,4 +2,5 @@
 @import './styles/_daisyui.css';
 
 @import './styles/_fonts.css';
-
+@import './styles/_badges.css';
+@import './styles/_buttons.css';
