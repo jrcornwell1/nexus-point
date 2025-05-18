@@ -5,3 +5,7 @@
 .btn-active {
     @apply !bg-brand text-white rounded-lg h-7;
 }
+
+.btn-pagination {
+    @apply rounded-lg h-7 bg-white;
+}

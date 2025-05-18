@@ -9,10 +9,10 @@ export default defineStore('vehicle', () => {
   const meta = ref({});
   const activeFilter = ref(FILTERS.ALL);
 
-  const fetchVehicles = async (params = null) => {
+  const fetchVehicles = async (params = null, page = null) => {
     try {
       isLoading.value = true;
-      const options = params ? { advert_classification: params } : {};
+      const options = params ? { advert_classification: params, page: page } : {};
       const { data } = await Vehicle.getVehicles(options);
       vehicles.value = data.data;
       meta.value = data.meta;
