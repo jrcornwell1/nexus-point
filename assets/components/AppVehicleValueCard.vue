@@ -3,12 +3,17 @@ import FieldInput from '@/components/FieldInput.vue';
 </script>
 
 <template>
-  <div class="card justify-between border-[1px] border-grey-200 bg-base-100 p-7">
-    <div class="card-title flex flex-col gap-2.5 text-center">
-      <h2 class="text-2xl font-semibold">Value your car</h2>
-      <p class="text-lg font-normal">Find out the value of your car in just a few minutes.</p>
+  <div
+    class="p-sm:p-7 card flex flex-row justify-between border-[1px] border-grey-200 bg-base-100 p-3 sm:flex-col"
+  >
+    <div class="card-title flex flex-col items-start gap-2.5 text-left sm:text-center">
+      <h2 class="text-lg font-semibold sm:text-2xl">Value your car</h2>
+      <p class="hidden text-lg font-normal sm:block">
+        Find out the value of your car in just a few minutes.
+      </p>
+      <p class="text-sm font-normal sm:hidden">Find out in just a few minutes.</p>
     </div>
-    <form>
+    <form class="hidden sm:block">
       <div class="card-body gap-2.5">
         <FieldInput label="VRM" placeholder="Enter VRM" type="text" />
         <FieldInput label="Mileage" placeholder="Enter mileage" />
@@ -17,6 +22,9 @@ import FieldInput from '@/components/FieldInput.vue';
         </button>
       </div>
     </form>
+    <button type="button" class="btn h-full rounded-xl text-lg font-semibold btn-primary sm:hidden">
+      Get valuation
+    </button>
   </div>
 </template>
 

@@ -3,7 +3,7 @@ import { FILTERS } from '@/const/index.js';
 import useVehicleStore from '../stores/vehicle.store.js';
 import { storeToRefs } from 'pinia';
 
-export default (config = {}) => {
+export default () => {
   const vehicleStore = useVehicleStore();
   const { vehicles, meta } = storeToRefs(vehicleStore);
   const activeFilter = ref(FILTERS.ALL);
@@ -16,7 +16,7 @@ export default (config = {}) => {
   };
 
   const totalCars = computed(() => {
-    return meta[total[activeFilter.value]];
+    return meta.value[total[activeFilter.value]];
   });
 
   return {
