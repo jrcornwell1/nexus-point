@@ -9,3 +9,7 @@
 .btn-pagination {
     @apply rounded-lg h-7 bg-white;
 }
+
+.btn-image-gallery {
+    @apply text-sm font-normal h-7 bg-grey-950 text-white leading-4 px-4 rounded-lg border-white/20;
+}

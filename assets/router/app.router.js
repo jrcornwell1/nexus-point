@@ -7,12 +7,11 @@ const router = createRouter({
     {
       path: '/',
       name: '_root',
-      redirect: { name: 'search-results' },
+      redirect: { name: ROUTE.SEARCH_RESULTS },
     },
     {
       path: '/app',
       name: ROUTE.$_APP,
-      redirect: { name: ROUTE.SEARCH_RESULTS },
       component: () => import('../components/AppFrame.vue'),
       children: [
         {
@@ -23,7 +22,6 @@ const router = createRouter({
             {
               path: 'search-results',
               name: ROUTE.$_APP_SEARCH_RESULTS,
-              redirect: { name: ROUTE.SEARCH_RESULTS },
               children: [
                 {
                   path: '',
