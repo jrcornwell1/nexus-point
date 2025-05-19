@@ -8,7 +8,7 @@ const props = defineProps({
   required: { type: Boolean, default: false },
 });
 
-const { label, placeholder, type, required } = toRefs(props);
+const { placeholder, type, required } = toRefs(props);
 </script>
 
 <template>

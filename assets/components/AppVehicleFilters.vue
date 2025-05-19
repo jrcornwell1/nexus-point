@@ -1,6 +1,5 @@
 <script setup>
 import useVehicleStore from '@/stores/vehicle.store.js';
-import { storeToRefs } from 'pinia';
 import { FILTERS } from '@/const/index.js';
 import useVehicles from '@/composables/useVehicles.js';
 
