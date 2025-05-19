@@ -26,7 +26,9 @@ const isCalculateFinance = computed(() => {
 </script>
 
 <template>
-  <div class="card bg-base-100 shadow-xl">
+  <div
+    class="card bg-base-100 shadow-xl md:transition-all md:duration-300 md:ease-in-out md:hover:scale-105 md:hover:shadow-2xl"
+  >
     <figure class="relative">
       <AppImageGallery :media-urls="vehicle.media_urls">
         <div class="absolute top-0 left-0 z-99 m-2.5 badge badge-lg">

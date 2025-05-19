@@ -1,8 +1,8 @@
 <script setup>
 import { useOffsetPagination } from '@vueuse/core';
 import { computed, toRefs, watch, ref } from 'vue';
-import ArrowLeft from '../icons/arrow-left.svg';
-import ArrowRight from '../icons/arrow-right.svg';
+import ArrowLeftDark from '../icons/arrow-left--dark.svg';
+import ArrowRightDark from '../icons/arrow-right--dark.svg';
 
 const props = defineProps({
   meta: { type: Object, required: true },
@@ -57,7 +57,11 @@ const scrollToTop = () => {
 
 <template>
   <div v-if="meta" class="flex flex-col justify-between gap-4 pt-11 md:flex-row">
-    <button type="button" class="btn order-2 btn-link btn-sm md:order-1" @click="scrollToTop">
+    <button
+      type="button"
+      class="btn order-2 font-normal text-grey-950 btn-link btn-sm md:order-1"
+      @click="scrollToTop"
+    >
       Back to top
     </button>
     <div class="order-1 flex items-center gap-2 md:order-2">
@@ -67,7 +71,7 @@ const scrollToTop = () => {
         type="button"
         class="btn-pagination btn disabled:opacity-5"
       >
-        <ArrowLeft class="h-4" />
+        <ArrowLeftDark class="" />
       </button>
 
       <!-- Page Numbers -->
@@ -93,7 +97,7 @@ const scrollToTop = () => {
         type="button"
         class="btn-pagination btn disabled:opacity-50"
       >
-        <ArrowRight class="h-4" />
+        <ArrowRightDark class="" />
       </button>
     </div>
     <div class="text-gray-600 hidden text-sm md:order-3 md:block">
